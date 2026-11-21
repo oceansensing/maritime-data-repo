@@ -1,7 +1,8 @@
 # maritime-data-repo: the founding plan and running record
 
 The United States' **maritime infrastructure**: shipping lanes, wind leases, turbines, cables, pipelines and platforms. Created on GitHub by the owner and given its documents by the site's
-`pipeline/scaffold/new-origin.py`. **Nothing is published yet.**
+`pipeline/scaffold/new-origin.py`. **Publishing since 2026-11-20** (the first dispatched run, `44847386888`, 00:59 UTC
+on the 21st: all seven products fresh, 20,668 files to R2), **its schedule daily** since.
 
 ## What it is for
 
@@ -13,7 +14,9 @@ Every source is a U.S. Government work in the public domain, read from its agenc
 
 ## Open
 
-1. The first dispatched run, read: seven products fresh, every root and `land/<product>/` on R2 alone, and the R2 job's time for the first upload of every tile.
-2. A second run the next day: none due, the same versions, nothing uploaded.
-3. Then the daily schedule.
+1. ~~The first dispatched run, read~~ — 2026-11-20, run `44847386888` (`due=all`): seven products fresh — 346 lanes,
+   52 leases, 18 planning areas, 469 turbines, 2,816 cable corridors, 17,112 pipeline segments, 1,280 platforms — the
+   build 3 min 25 s, the R2 job 12 min 36 s for its first upload (20,668 files, read back equal to the built tree).
+2. The daily schedule, on since 2026-11-20 (`37 10 * * *`): its first run, the next day, read — none due, the same
+   versions, nothing uploaded.
 4. A month of runs read: NOAA's chart service's intermittent errors, and the lanes' weekly read against the charts' own updates.

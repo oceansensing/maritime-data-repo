@@ -28,8 +28,8 @@ on:
         description: 'Steps to read their source now whatever their interval (comma list, or all)'
         type: string
         default: ''
-  # schedule:
-  #   - cron: '37 10 * * *'
+  schedule:
+    - cron: '37 10 * * *'
 
 permissions: {}
 
