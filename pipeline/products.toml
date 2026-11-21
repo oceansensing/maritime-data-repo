@@ -1,0 +1,125 @@
+# What this repository publishes: the United States' maritime infrastructure, seven products, each a root
+# of every record and a pyramid of Mapbox vector tiles made from it, `land/<product>/` (an index and its
+# versioned tiles): the shipping lanes and regulated areas on NOAA's nautical charts; the Bureau of Ocean
+# Energy Management's offshore wind leases and, as history, its wind planning areas, rescinded on
+# July 30, 2025; MarineCadastre's offshore wind turbines and submarine cable corridors; and the Bureau of
+# Safety and Environmental Enforcement's pipelines and platforms in the Gulf of America. The fetcher is the
+# site's `scripts/fetch-maritime.py`, whose docstring carries the measurements; the tiles are written by the
+# site's `scripts/land_tiles.py` and `scripts/point_tiles.py`.
+#
+# **To the second host alone** (`r2_only`, the site pipeline's D13, its note of 2026-10-09): every file of
+# each product is published to Cloudflare R2 and not to Pages, which carries the status alone; the roots
+# stay on the `published` branch, where the next run seeds from them. `trees` names the folder each product
+# writes beside its root (the orchestrator's, 2026-10-20), so it goes to R2 with it.
+#
+# **Each step runs every run; each source is read on its own cadence.** A tree is never banked, so each
+# pyramid is made again from its published root on every run, whether the workflow's cache restored it or
+# not, and the fetcher reads a source itself only once its root is that old (`EVERY_HOURS` in the fetcher):
+# NOAA's lanes weekly (the charts are updated weekly), the planning areas quarterly (rescinded, they change
+# no more), the rest monthly. **Never give a step `every_hours`**: a step not run writes no `land/`.
+#
+# **The budgets.** The lanes', the pipelines' and the platforms' hour is the read's own (their services
+# give no date of their own): the lanes 360 hours, a week's read, one missed and a day; the pipelines and
+# the platforms 1,500, a month's read, one missed and a few days. The leases', the planning areas', the
+# turbines' and the cables' hour is their service's last edit, which an old date is no fault of: no budget.
+
+[contract]
+check = ["node", "scripts/test-schema.mjs"]
+roots = ["node", "scripts/test-schema.mjs", "--roots"]
+
+[defaults]
+timeout_minutes = 20
+
+[steps.shipping-lanes]
+cmd = ["python3", "scripts/fetch-maritime.py", "--only=shipping-lanes"]
+lane = "encdirect.noaa.gov"
+
+[steps.wind-leases]
+cmd = ["python3", "scripts/fetch-maritime.py", "--only=wind-leases"]
+lane = "services7.arcgis.com"
+
+[steps.wind-planning-areas]
+cmd = ["python3", "scripts/fetch-maritime.py", "--only=wind-planning-areas"]
+lane = "services7.arcgis.com"
+
+[steps.wind-turbines]
+cmd = ["python3", "scripts/fetch-maritime.py", "--only=wind-turbines"]
+lane = "coast.noaa.gov"
+
+[steps.submarine-cables]
+cmd = ["python3", "scripts/fetch-maritime.py", "--only=submarine-cables"]
+lane = "coast.noaa.gov"
+
+[steps.pipelines]
+cmd = ["python3", "scripts/fetch-maritime.py", "--only=pipelines"]
+lane = "gis.boem.gov"
+
+[steps.platforms]
+cmd = ["python3", "scripts/fetch-maritime.py", "--only=platforms"]
+lane = "gis.boem.gov"
+
+[products.shipping-lanes]
+title = "Shipping lanes and regulations: traffic separation schemes, fairways, routes, areas to be avoided and the right whales' seasonal areas (NOAA Office of Coast Survey, from the ENCs)"
+step = "shipping-lanes"
+roots = ["shipping-lanes.json"]
+writes = ["shipping-lanes.json"]
+namespace = ["python3", "scripts/fetch-maritime.py", "--namespace", "--only=shipping-lanes"]
+max_age_hours = 360
+r2_only = true
+trees = ["land/shipping-lanes"]
+
+[products.wind-leases]
+title = "Offshore wind leases: their outlines, lessees and projects (BOEM)"
+step = "wind-leases"
+roots = ["wind-leases.json"]
+writes = ["wind-leases.json"]
+namespace = ["python3", "scripts/fetch-maritime.py", "--namespace", "--only=wind-leases"]
+r2_only = true
+trees = ["land/wind-leases"]
+
+[products.wind-planning-areas]
+title = "Offshore wind planning areas, rescinded July 30, 2025, as history (BOEM)"
+step = "wind-planning-areas"
+roots = ["wind-planning-areas.json"]
+writes = ["wind-planning-areas.json"]
+namespace = ["python3", "scripts/fetch-maritime.py", "--namespace", "--only=wind-planning-areas"]
+r2_only = true
+trees = ["land/wind-planning-areas"]
+
+[products.wind-turbines]
+title = "Offshore wind turbines and substations (NOAA Office for Coastal Management, MarineCadastre.gov)"
+step = "wind-turbines"
+roots = ["wind-turbines.json"]
+writes = ["wind-turbines.json"]
+namespace = ["python3", "scripts/fetch-maritime.py", "--namespace", "--only=wind-turbines"]
+r2_only = true
+trees = ["land/wind-turbines"]
+
+[products.submarine-cables]
+title = "Submarine cable corridors (NOAA Office for Coastal Management, MarineCadastre.gov)"
+step = "submarine-cables"
+roots = ["submarine-cables.json"]
+writes = ["submarine-cables.json"]
+namespace = ["python3", "scripts/fetch-maritime.py", "--namespace", "--only=submarine-cables"]
+r2_only = true
+trees = ["land/submarine-cables"]
+
+[products.pipelines]
+title = "Oil and gas pipelines on the Gulf of America's outer continental shelf, every status (BSEE, BOEM)"
+step = "pipelines"
+roots = ["pipelines.json"]
+writes = ["pipelines.json"]
+namespace = ["python3", "scripts/fetch-maritime.py", "--namespace", "--only=pipelines"]
+max_age_hours = 1500
+r2_only = true
+trees = ["land/pipelines"]
+
+[products.platforms]
+title = "Oil and gas platforms standing on the Gulf of America's outer continental shelf (BSEE, BOEM)"
+step = "platforms"
+roots = ["platforms.json"]
+writes = ["platforms.json"]
+namespace = ["python3", "scripts/fetch-maritime.py", "--namespace", "--only=platforms"]
+max_age_hours = 1500
+r2_only = true
+trees = ["land/platforms"]
