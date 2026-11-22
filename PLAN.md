@@ -17,6 +17,5 @@ Every source is a U.S. Government work in the public domain, read from its agenc
 1. ~~The first dispatched run, read~~ — 2026-11-20, run `44847386888` (`due=all`): seven products fresh — 346 lanes,
    52 leases, 18 planning areas, 469 turbines, 2,816 cable corridors, 17,112 pipeline segments, 1,280 platforms — the
    build 3 min 25 s, the R2 job 12 min 36 s for its first upload (20,668 files, read back equal to the built tree).
-2. The daily schedule, on since 2026-11-20 (`37 10 * * *`): its first run, the next day, read — none due, the same
-   versions, nothing uploaded.
+2. ~~The daily schedule's first run~~ (`37 10 * * *`, on since 2026-11-20) — 2026-11-21, run `44895615998`, green.
 4. A month of runs read: NOAA's chart service's intermittent errors, and the lanes' weekly read against the charts' own updates.

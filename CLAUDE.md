@@ -160,7 +160,7 @@ fact from a guess that aged.
 - **R2 alone** (`r2_only` on each product): the origin is in the site's `MAP_ORIGINS`, so its status is published to Pages, where the watchdog reads it.
 - **Every file is the site's to write**: `scripts/fetch-maritime.py` fetches and checks, `scripts/land_tiles.py` and `scripts/point_tiles.py` write the tiles, `scripts/test-schema.mjs` checks both. Nothing here runs code of its own.
 - **Each pyramid is made from its root every run, so each step runs every run.** The `published` branch banks the top-level files of a publish and never a tree, and the workflow's cache can miss, so each `land/<product>/` is written whole each run: from the source when it is due (the fetcher's own interval, read from the root's `updated`; a dispatch naming the step with `PIPELINE_DUE_NOW` makes it due), and from the published root otherwise — byte for byte, so R2, which uploads by MD5, sends nothing. A source that fails, or a read a control refuses, leaves the published root and makes its pyramid again before the step exits. **Never give a step `every_hours`**.
-- **A new version is new paths**: the version is the tiles' own hash, so a changed set is every tile again under a new folder, and the folder it replaced leaves R2 in the same publish, after the status lands.
+- **A new version is new paths**: the version is the tiles' own hash, so a changed set is every tile again under a new folder, and the folder it replaced stays on R2 a run and 31 hours at least (the site pipeline's `LAND_GRACE_SECONDS`), since a reader may hold the index a day.
 - **NOAA's chart service answers intermittently with an error 500 inside a 200** ("Could not find service"): the fetcher asks again, and after its last try exits 75, the server's failure, not ours.
 - **The planning areas are history**: every record says it was rescinded, the day read from the layer's own title; a title that no longer says so refuses the read, for a person to look first.
 - **The physical controls are things that do not move**: the Boston and Ambrose–Nantucket traffic lanes, Cape Cod Bay's right-whale area and the Gulf's east–west safety fairway; Revolution Wind's lease in Rhode Island Sound at its acres; the Gulf of America Wind Energy Area and Central Atlantic Call Area E; Block Island's and Coastal Virginia's turbines; the MAREA and Dunant cables at Virginia Beach and the Japan–U.S. network at Morro Bay; Olympus's and Perdido's export lines at their platforms; Mars, Thunder Horse and Perdido where they stand.
@@ -182,8 +182,9 @@ fact from a guess that aged.
   with `--only=` naming this repository's products: too wide and the write
   fence refuses the run, too narrow and declared files are never written and
   their previous copies are served frozen.
-- **A green run is not a healthy one.** No workflow fails on `behind`; the
-  site's watchdog issue and each product's `staleCause` are the alarm.
+- **A green run is not a healthy one.** No workflow fails on `behind`; for what Pages carries, the site's watchdog issue and each
+  product's `staleCause` are the alarm; for what R2 alone carries, read the fate and `staleCause` in
+  the `published` branch's status, since the watchdog sees only the origin's schedule.
 - **This repository is public**, so its Actions logs are readable by anyone
   signed in to GitHub. Nothing secret is printed, and the downstream app is
   named nowhere here (the owner, 2026-09-26).
