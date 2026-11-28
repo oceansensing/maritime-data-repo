@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "shipping-lanes",
+ "title": "Shipping lanes and regulations: traffic separation schemes, fairways, routes, areas to be avoided and the right whales' seasonal areas (NOAA Office of Coast Survey, from the ENCs)",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:44:14Z",
+ "updated": "2026-11-28T10:44:14Z",
+ "hour": "2026-11-28T10:43:17Z",
+ "modelRun": null,
+ "source": "NOAA Office of Coast Survey (ENC)",
+ "hours": [
+  "2026-11-28T10:43:17Z"
+ ],
+ "files": {
+  "shipping-lanes.json": {
+   "bytes": 4224965,
+   "sha256": "bcb8d4807c0bf41fc46c447ffc85332f9657f56b9e15558505a53e09604d4893"
+  }
+ },
+ "trees": {
+  "land/shipping-lanes": "190d5626c832"
+ }
+}

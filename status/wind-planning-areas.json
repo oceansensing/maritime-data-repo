@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "wind-planning-areas",
+ "title": "Offshore wind planning areas, rescinded July 30, 2025, as history (BOEM)",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:44:14Z",
+ "updated": "2026-11-21T01:02:37Z",
+ "hour": "2025-02-20T16:28:20Z",
+ "modelRun": null,
+ "source": "BOEM",
+ "hours": [
+  "2025-02-20T16:28:20Z"
+ ],
+ "files": {
+  "wind-planning-areas.json": {
+   "bytes": 130517,
+   "sha256": "155d10bae5a9a09832ae1009e5bf7b5a274e8065817a15910db3e4de2d6d8147"
+  }
+ },
+ "trees": {
+  "land/wind-planning-areas": "b490e6efeb5b"
+ }
+}

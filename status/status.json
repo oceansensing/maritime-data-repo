@@ -1,0 +1,158 @@
+{
+ "schema": 2,
+ "contract": 1,
+ "generated": "2026-11-28T10:44:14Z",
+ "mode": "full",
+ "run": {
+  "id": "46136429116",
+  "url": "https://github.com/oceansensing/maritime-data-repo/actions/runs/46136429116"
+ },
+ "schedule": {
+  "crons": [
+   "37 10 * * *"
+  ],
+  "longestGapHours": 24.0
+ },
+ "products": {
+  "shipping-lanes": {
+   "title": "Shipping lanes and regulations: traffic separation schemes, fairways, routes, areas to be avoided and the right whales' seasonal areas (NOAA Office of Coast Survey, from the ENCs)",
+   "roots": [
+    "shipping-lanes.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-11-28T10:44:14Z",
+   "updated": "2026-11-28T10:44:14Z",
+   "hour": "2026-11-28T10:43:17Z",
+   "modelRun": null,
+   "source": "NOAA Office of Coast Survey (ENC)",
+   "hours": [
+    "2026-11-28T10:43:17Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 0.02,
+   "nearestOffsetHours": 0.02
+  },
+  "wind-leases": {
+   "title": "Offshore wind leases: their outlines, lessees and projects (BOEM)",
+   "roots": [
+    "wind-leases.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-11-28T10:44:14Z",
+   "updated": "2026-11-21T01:02:37Z",
+   "hour": "2025-03-04T19:31:41Z",
+   "modelRun": null,
+   "source": "BOEM",
+   "hours": [
+    "2025-03-04T19:31:41Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 15207.21,
+   "nearestOffsetHours": 15207.21
+  },
+  "wind-planning-areas": {
+   "title": "Offshore wind planning areas, rescinded July 30, 2025, as history (BOEM)",
+   "roots": [
+    "wind-planning-areas.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-11-28T10:44:14Z",
+   "updated": "2026-11-21T01:02:37Z",
+   "hour": "2025-02-20T16:28:20Z",
+   "modelRun": null,
+   "source": "BOEM",
+   "hours": [
+    "2025-02-20T16:28:20Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 15498.27,
+   "nearestOffsetHours": 15498.27
+  },
+  "wind-turbines": {
+   "title": "Offshore wind turbines and substations (NOAA Office for Coastal Management, MarineCadastre.gov)",
+   "roots": [
+    "wind-turbines.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-11-28T10:44:14Z",
+   "updated": "2026-11-21T01:02:37Z",
+   "hour": "2025-12-02T15:39:17Z",
+   "modelRun": null,
+   "source": "NOAA Office for Coastal Management, MarineCadastre.gov",
+   "hours": [
+    "2025-12-02T15:39:17Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 8659.08,
+   "nearestOffsetHours": 8659.08
+  },
+  "submarine-cables": {
+   "title": "Submarine cable corridors (NOAA Office for Coastal Management, MarineCadastre.gov)",
+   "roots": [
+    "submarine-cables.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-11-28T10:44:14Z",
+   "updated": "2026-11-21T01:02:37Z",
+   "hour": "2025-02-19T23:51:50Z",
+   "modelRun": null,
+   "source": "NOAA Office for Coastal Management, MarineCadastre.gov",
+   "hours": [
+    "2025-02-19T23:51:50Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 15514.87,
+   "nearestOffsetHours": 15514.87
+  },
+  "pipelines": {
+   "title": "Oil and gas pipelines on the Gulf of America's outer continental shelf, every status (BSEE, BOEM)",
+   "roots": [
+    "pipelines.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-11-28T10:44:14Z",
+   "updated": "2026-11-21T01:02:37Z",
+   "hour": "2026-11-21T01:00:57Z",
+   "modelRun": null,
+   "source": "BSEE, BOEM",
+   "hours": [
+    "2026-11-21T01:00:57Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 177.72,
+   "nearestOffsetHours": 177.72
+  },
+  "platforms": {
+   "title": "Oil and gas platforms standing on the Gulf of America's outer continental shelf (BSEE, BOEM)",
+   "roots": [
+    "platforms.json"
+   ],
+   "fate": "fresh",
+   "reason": null,
+   "checked": "2026-11-28T10:44:14Z",
+   "updated": "2026-11-21T01:02:37Z",
+   "hour": "2026-11-21T01:01:58Z",
+   "modelRun": null,
+   "source": "BSEE, BOEM",
+   "hours": [
+    "2026-11-21T01:01:58Z"
+   ],
+   "stale": false,
+   "staleCause": null,
+   "ageHours": 177.7,
+   "nearestOffsetHours": 177.7
+  }
+ }
+}

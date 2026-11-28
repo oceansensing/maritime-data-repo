@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "platforms",
+ "title": "Oil and gas platforms standing on the Gulf of America's outer continental shelf (BSEE, BOEM)",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:44:14Z",
+ "updated": "2026-11-21T01:02:37Z",
+ "hour": "2026-11-21T01:01:58Z",
+ "modelRun": null,
+ "source": "BSEE, BOEM",
+ "hours": [
+  "2026-11-21T01:01:58Z"
+ ],
+ "files": {
+  "platforms.json": {
+   "bytes": 198846,
+   "sha256": "67a8a062fbc6460146872577b12670fa96553e1252040d2599d197828949c523"
+  }
+ },
+ "trees": {
+  "land/platforms": "38f5c567a70a"
+ }
+}

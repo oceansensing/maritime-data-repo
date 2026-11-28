@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "wind-turbines",
+ "title": "Offshore wind turbines and substations (NOAA Office for Coastal Management, MarineCadastre.gov)",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:44:14Z",
+ "updated": "2026-11-21T01:02:37Z",
+ "hour": "2025-12-02T15:39:17Z",
+ "modelRun": null,
+ "source": "NOAA Office for Coastal Management, MarineCadastre.gov",
+ "hours": [
+  "2025-12-02T15:39:17Z"
+ ],
+ "files": {
+  "wind-turbines.json": {
+   "bytes": 58901,
+   "sha256": "1b861d8b9d455b1004d233b1bc46b52e5a30f2fad480519b57a7800c95843686"
+  }
+ },
+ "trees": {
+  "land/wind-turbines": "fc848a05b368"
+ }
+}

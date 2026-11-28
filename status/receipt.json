@@ -1,0 +1,21 @@
+{
+ "schema": 1,
+ "generated": "2026-11-28T10:44:14Z",
+ "mode": "full",
+ "fates": {
+  "shipping-lanes": "fresh",
+  "wind-leases": "fresh",
+  "wind-planning-areas": "fresh",
+  "wind-turbines": "fresh",
+  "submarine-cables": "fresh",
+  "pipelines": "fresh",
+  "platforms": "fresh"
+ },
+ "reasons": {},
+ "built": {},
+ "withheld": {},
+ "deploy": true,
+ "notes": [],
+ "behind": [],
+ "tile_keys": {}
+}

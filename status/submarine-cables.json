@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "submarine-cables",
+ "title": "Submarine cable corridors (NOAA Office for Coastal Management, MarineCadastre.gov)",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:44:14Z",
+ "updated": "2026-11-21T01:02:37Z",
+ "hour": "2025-02-19T23:51:50Z",
+ "modelRun": null,
+ "source": "NOAA Office for Coastal Management, MarineCadastre.gov",
+ "hours": [
+  "2025-02-19T23:51:50Z"
+ ],
+ "files": {
+  "submarine-cables.json": {
+   "bytes": 16332773,
+   "sha256": "1175881bcaa800946e7d2eeb131281e788caabe22df18d27545e62ce5f9254db"
+  }
+ },
+ "trees": {
+  "land/submarine-cables": "9c2b1171a3fa"
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "wind-leases",
+ "title": "Offshore wind leases: their outlines, lessees and projects (BOEM)",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:44:14Z",
+ "updated": "2026-11-21T01:02:37Z",
+ "hour": "2025-03-04T19:31:41Z",
+ "modelRun": null,
+ "source": "BOEM",
+ "hours": [
+  "2025-03-04T19:31:41Z"
+ ],
+ "files": {
+  "wind-leases.json": {
+   "bytes": 4752439,
+   "sha256": "955fa6c7acf476bd12c8c42db235a720ead4f11f54b9d85da5d47c87670149d8"
+  }
+ },
+ "trees": {
+  "land/wind-leases": "2646bbe23cfd"
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "schema": 1,
+ "product": "pipelines",
+ "title": "Oil and gas pipelines on the Gulf of America's outer continental shelf, every status (BSEE, BOEM)",
+ "fate": "fresh",
+ "reason": null,
+ "checked": "2026-11-28T10:44:14Z",
+ "updated": "2026-11-21T01:02:37Z",
+ "hour": "2026-11-21T01:00:57Z",
+ "modelRun": null,
+ "source": "BSEE, BOEM",
+ "hours": [
+  "2026-11-21T01:00:57Z"
+ ],
+ "files": {
+  "pipelines.json": {
+   "bytes": 18040921,
+   "sha256": "ccc2f5431910cc671de24fdb11ff8463df98a156a9a0701791219a19f5dd9766"
+  }
+ },
+ "trees": {
+  "land/pipelines": "71e2508ab8ec"
+ }
+}
